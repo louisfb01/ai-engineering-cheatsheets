@@ -2,7 +2,7 @@
 
 By [Louis-Francois Bouchard](https://www.linkedin.com/in/whats-ai/) ([X](https://twitter.com/Whats_AI), [YouTube](https://youtube.com/whats_ai), [other AI resources](https://links.louisbouchard.ai/))
 
-Goal: give you decision-ready references for the most common AI engineering problems. No theory walls. Open a cheatsheet, find your situation in the table, follow the recommendation.
+Goal: give you decision-ready references for the most common AI engineering problems. Open a cheatsheet, find your situation in the table, and follow the recommendation.
 
 ## Cheatsheets
 
@@ -18,12 +18,13 @@ Goal: give you decision-ready references for the most common AI engineering prob
 2. Find your situation in the decision tables.
 3. Follow the recommended approach.
 
-For the Anti-Slop guide, copy the complete template directly into your LLM of choice.
+For the Anti-Slop guide, copy the complete template directly into your LLM of choice, then fill in the variables and edit to best fit your needs.
 
 ## Learn more
 
-These cheatsheets come from the [Towards AI](https://towardsai.net) courses. They cover the same frameworks in more depth, with full lessons, code, and hands-on projects.
+These cheatsheets come from the [Towards AI](https://academy.towardsai.net/?ref=1f9b29) courses. They cover the same frameworks in more depth, with full lessons, code, and hands-on projects.
 
-- [Full Stack AI Engineering](https://academy.towardsai.net/courses/beginner-to-advanced-llm-dev?ref=1f9b29) - Prompting to production-grade RAG, agents, and multi-agent systems.
-- [AI for Business Professionals](https://academy.towardsai.net/courses/ai-business-professionals?ref=1f9b29) - AI writing, workflows, and practical AI adoption for teams.
+- [Full Stack AI Engineering](https://academy.towardsai.net/courses/beginner-to-advanced-llm-dev?ref=1f9b29) - Prompting to production-grade RAG system. Position yourself for the roles, projects, and opportunities that AI is creating right now.
+- [AI for Business Professionals](https://academy.towardsai.net/courses/ai-business-professionals?ref=1f9b29) - Learn to get real benefits from LLMs for valuable tasks from experts that build AI for a living.
+- [Agentic AI Engineering](https://academy.towardsai.net/courses/agent-engineering?ref=1f9b29) - Your Path to Agentic AI for Production.
 - [Free Agents Webinar](https://www.youtube.com/watch?v=iOpLKJYOvXs) - Workflows vs. agents deep-dive (YouTube).
