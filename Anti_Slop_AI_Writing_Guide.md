@@ -12,6 +12,8 @@ By Louis-Francois Bouchard ([LinkedIn](https://www.linkedin.com/in/whats-ai/), [
 
 For best results, use the *two-model workflow* described at the end: one model to write, another to review, then revise based on the feedback.
 
+Watch the free accompanying video here: [https://youtu.be/bMlvTbg1hVk](https://youtu.be/bMlvTbg1hVk)
+
 **What to customize:** Replace all [bracketed placeholders] with your actual content: topic, audience, structure, and paste your source material. The anti-slop word list and style rules work well as-is for most use cases.
 
 ---
