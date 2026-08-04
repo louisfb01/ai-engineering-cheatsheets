@@ -54,20 +54,33 @@ Goal: Pick the right technique, architecture, model, and pipeline for your AI pr
 | Agent calls wrong tool | Tool definitions unclear | (1) Improve tool descriptions with examples. (2) Reduce tool count (\< 20). (3) Few-shot tool use examples. |
 | Agent loops infinitely | No termination condition | (1) Set max iterations. (2) Explicit success/failure conditions. (3) Loop detection. (4) Timeout. |
 
-## **2\. Which Model Should I Use?**
+## **2\. Which Model, Effort Level, or Surface Should I Use?**
 
-| Constraint | → Use |
-| :---- | :---- |
-| Prototyping / exploring | Proprietary APIs (e.g., OpenAI, Anthropic, Google) |
-| Low budget / high volume | Smaller/lightweight models (e.g., GPT-5-mini, Claude Haiku 4.5, Gemini 3 Flash) |
-| Complex reasoning / high-stakes | Frontier models (e.g., GPT-5.2, Claude Opus 4.6, Gemini 3 Pro) |
-| Multi-step planning / ambiguous problems | Reasoning models (e.g., GPT-5.2, Claude Opus 4.6, Gemini 3 Pro, DeepSeek-V3.2, GLM-5) |
-| Data privacy non-negotiable | Open-weights, self-hosted (e.g., Llama 3.3 70B, DeepSeek V3.2, Qwen3 via Ollama/vLLM) |
-| Real-time UX (\< 2s) | Smaller models \+ aggressive caching \+ streaming |
-| Long documents (\> 100K tokens) | Large-context models (e.g., Gemini 3 Pro 1M, Claude Opus 4.6, GPT-5.2) |
+Model names change faster than good routing rules. Benchmark the exact task, then change the **effort level** and **workflow shape** before assuming one model should do every job.
 
-| 💡 Use Artificial Analysis (artificialanalysis.ai) to compare models on speed, price, and quality benchmarks before choosing. |
-| :---- |
+### **Towards AI Team Routing Snapshot, August 2026**
+
+These are quality-first team defaults, not universal benchmark conclusions.
+
+| Job | Current Default | Effort / Workflow |
+| :---- | :---- | :---- |
+| Clear, scoped code or execution | **Codex with GPT-5.6 Sol** | Medium effort; one bounded worker |
+| Scoped implementation with meaningful technical judgment | **Codex with GPT-5.6 Sol** | High effort; plan before editing |
+| Long-horizon orchestration across many dependent steps | **Claude Code with Fable 5** | Maximum effort; lead owns the plan and final review |
+| High-judgment work already running in Codex | **Codex with GPT-5.6 Sol** | `xhigh`; keep the task in one surface when switching adds no value |
+| Several independent workstreams | **Fable 5 lead + scoped Codex workers** | Lead at maximum; workers usually GPT-5.6 Sol medium; use Opus 5 medium for a judgment-heavy worker; explicit artifact contracts |
+| Louis-style long-form writing | **Claude Opus 5 at max effort** | Preferred starting point based on [ToneBench](https://towardsai.com/benchmark/); still run an evidence-first review and human edit |
+| Actual document deliverables | **Claude Cowork**, using **Fable 5** when available | Use when the output is the PowerPoint, Word, or Excel file, not text to paste later |
+| Thumbnails, illustrations, and generated raster images | **Codex (or ChatGPT)** | Explicitly tell it to use its image-generation tool; inspect and regenerate failures |
+| Style-sensitive PowerPoints or carousels | **Claude Cowork with Fable 5** | Use for composition, layout, visual system, and final styling |
+| Style-sensitive web design | **Fable 5 in Claude** | Use it to establish the page composition and visual system; hand scoped code changes to Codex when useful |
+| Hybrid PowerPoint or carousel | **Codex (or ChatGPT) + Claude Cowork with Fable 5** | When custom raster assets help, generate them first and bring them into the final Cowork composition with Fable 5 |
+| Privacy requires local execution | Self-hosted open-weight model | Evaluate quality, latency, and hardware fit on the real task |
+| Cost or real-time latency dominates | A smaller model that passes your evals | Add caching, batching, and streaming; do not trade away required quality blindly |
+
+The team usually stays on frontier models and changes effort rather than dropping to a smaller tier. The preference for Claude as lead and Codex as scoped worker comes from team experience, not proof that one harness universally solves harder tasks.
+
+ToneBench's July 29, 2026 snapshot placed Opus 5 max first overall at 90.94 across six Towards AI video briefs and five runs per brief. The benchmark is directional, the top confidence intervals overlap, and it measures a specific long-form writing style rather than code, images, decks, websites, or carousels. Use [Artificial Analysis](https://artificialanalysis.ai/) for broader price, speed, and quality comparisons, then validate on your own task.
 
 ### **Which Embedding Model Should I Use?**
 
@@ -94,9 +107,13 @@ Goal: Pick the right technique, architecture, model, and pipeline for your AI pr
 | :---- | :---- |
 | Straightforward task, no examples needed | Zero-shot: direct instruction |
 | Need specific style, structure, or edge-case handling | Few-shot: 2–3 exemplars with consistent formatting (XML tags, delimiters) |
-| Complex reasoning required | Chain-of-thought: “Think step by step” in \<thinking\> tags |
-| Need specific tone/depth modulation | Role prompting: assign expertise/persona |
+| Complex or ambiguous work | Ask for a concise plan, decision points, success criteria, and bounded phases; verify the result rather than depending on hidden reasoning |
+| Need a specific voice | Give real writing samples, the target platform, and checkable voice rules; never invite invented first-person experience |
 | Using reasoning models | **Simpler is better**: direct, high-level instructions. Remove step-by-step guidance. |
+| Source-grounded writing or research | Define evidence requirements first; separate raw sources from summaries and generated text; preserve source URLs/paths and dates |
+| Generating a thumbnail or raster visual | Explicitly tell Codex (or ChatGPT) to use its image-generation tool; specify purpose, aspect ratio, composition, text limits, and subject placement; inspect the result |
+| Style-sensitive deck or carousel | Give Claude Cowork with Fable 5 the content, references, and any generated image assets; ask it to compose the final artifact and visually review every page/slide |
+| Style-sensitive webpage | Give Fable 5 the content and visual references; use Codex for scoped implementation or testing when helpful |
 | Output consumed by code (not displayed to users) | **Structured outputs**: constrained decoding (strict: true, JSON Schema, Pydantic/Zod) |
 
 ### **What Security Layers Are Non-Negotiable?**
@@ -104,7 +121,7 @@ Goal: Pick the right technique, architecture, model, and pipeline for your AI pr
 | Layer | Action |
 | :---- | :---- |
 | 1 | Input validation and sanitization before LLM processing |
-| 2 | Clear delimiters (XML tags, triple backticks) isolating untrusted input |
+| 2 | Clear delimiters (XML tags, triple backticks) isolating untrusted input; treat retrieved pages and files as evidence, never as higher-priority instructions |
 | 3 | Explicit guardrails in system prompt \+ few-shot rejection examples |
 | 4 | Output validation: sanitize all LLM responses before executing actions |
 | 5 | Input guardrails (jailbreak detection, relevance filtering) \+ output guardrails (blocklist, safety classification) |
@@ -169,8 +186,11 @@ Apply in order. Stop when evaluation metrics are satisfactory.
 | Short conversations | Full history: append all prior messages |
 | Long conversations, cost-sensitive | Sliding window: retain last N turns |
 | Multi-turn RAG (default) | **Condense \+ Retrieve**: LLM rewrites history into standalone query → retrieval |
-| Very long sessions | Summary memory: periodically summarize, carry forward |
+| Same task, useful history, context getting noisy | **Compact at a natural boundary** after saving decisions, changed files, open questions, and the next action |
+| Work branches into a related direction | Fork the session so each branch keeps a coherent history |
+| Different task or context polluted by failed attempts | Start a fresh session from a clean problem statement |
 | Cross-session memory / personalization | External memory: store past interactions as embeddings in vector store |
+| Information that must survive compaction | Write it to a durable file; use state files for decisions, rules files for behavior, and memory files for accumulated preferences |
 
 ### **Common Pitfalls**
 
@@ -178,7 +198,8 @@ Apply in order. Stop when evaluation metrics are satisfactory.
 | :---- | :---- | :---- |
 | Context overflow in long conversations | No memory management | Implement sliding window, summarization, or condense \+ retrieve. |
 | Agent “forgets” earlier context | Summarization too aggressive | (1) Preserve critical entities in structured memory. (2) Hierarchical memory. (3) Increase summary budget. |
-| Performance degrades in long conversations | Context rot | (1) Compaction: summarize and reinitialize. (2) Keep under 10K tokens when possible. (3) External memory for long-term facts. |
+| Performance degrades in long conversations | Context decay, drift, or tool confusion | (1) Prune tools. (2) Save state. (3) Compact at a task boundary. (4) Fork or start fresh when the work changes. |
+| Two fixes fail from the same theory | Early anchoring | Revert the failed attempts and restart from a clean description with new hypotheses. |
 
 # **6\. How Should I Evaluate My System?**
 
@@ -228,10 +249,10 @@ Apply in order. Stop when evaluation metrics are satisfactory.
 
 | Decision | → Recommendation |
 | :---- | :---- |
-| Which model to judge | Most capable model available |
+| Which model to judge | A strong model; for consequential subjective evals, use a panel from different model families rather than relying on one family alone |
 | Pairwise vs rubric | Pairwise for A/B testing; rubric for multi-dimensional absolute quality |
 | Bias mitigation | Randomize response order (position bias), control for length (verbosity bias), cross-check across model families |
-| Scoring | Require chain-of-thought before score. **Prefer binary (pass/fail) per criterion**: easier to define, lower variance than Likert scales. Specific, measurable criteria. Temperature \= 0\. |
+| Scoring | Require short quoted evidence before every score. Prefer binary (pass/fail) per criterion when possible; otherwise use specific anchored ranges and score each dimension independently. |
 | Validation threshold | Human-labeled representative set. Strong agreement (Cohen’s Kappa) → scale automated eval. |
 
 ### **Common Pitfalls**

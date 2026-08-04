@@ -4,13 +4,15 @@ By [Louis-Francois Bouchard](https://www.linkedin.com/in/whats-ai/) ([X](https:/
 
 Goal: give you decision-ready references for the most common AI engineering problems. Open a cheatsheet, find your situation in the table, and follow the recommendation.
 
+Model and tool preferences are a snapshot from August 2026. Treat them as tested starting points, then validate them on your own workload.
+
 ## Cheatsheets
 
 | Cheatsheet | What you get |
 | :--- | :--- |
-| [AI Engineering Playbook](AI_Engineering_Playbook.md) | Pick the right AI technique, model, prompting strategy, RAG setup, memory pattern, eval method, and production config. Decision tables for each. |
-| [Agent Architecture Guide](Agent_Architecture_Guide.md) | Decide between workflow, single agent, and multi-agent. Includes the questions to ask, the signals to look for, and the engineering rules to follow. |
-| [Anti-Slop AI Writing Guide](Anti_Slop_AI_Writing_Guide.md) | Get human-sounding output from any LLM. A 7-section prompt template, a banned-word list, style rules, and a two-model write-then-review workflow. |
+| [AI Engineering Playbook](AI_Engineering_Playbook.md) | Pick the right AI technique, model, effort level, modality workflow, prompting strategy, RAG setup, memory pattern, eval method, and production config. |
+| [Agent Architecture and Operations Guide](Agent_Architecture_Guide.md) | Decide between workflow, single agent, and multi-agent, then operate it with curated context, evidence stores, phased review, portable skills, feedback loops, and safe scheduling. |
+| [Anti-Slop AI Writing Guide](Anti_Slop_AI_Writing_Guide.md) | Produce grounded, human-sounding writing with a 7-section prompt, checkable anti-slop rules, the current Towards AI long-form starting point, evidence-first review, one targeted rewrite, and platform checks. |
 
 ## How to use
 
@@ -18,7 +20,7 @@ Goal: give you decision-ready references for the most common AI engineering prob
 2. Find your situation in the decision tables.
 3. Follow the recommended approach.
 
-For the Anti-Slop guide, copy the complete template directly into your LLM of choice, then fill in the variables and edit to best fit your needs.
+For the Anti-Slop guide, assemble the sources first, fill in the complete template, finish the draft, and then run the separate evidence-first review before your human edit.
 
 ## Learn more
 
