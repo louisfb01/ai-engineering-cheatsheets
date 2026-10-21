@@ -8,7 +8,7 @@ This edition (October 2026) is built from [ToneBench](https://benchmark.towardsa
 
 Watch the free accompanying video: [https://youtu.be/bMlvTbg1hVk](https://youtu.be/bMlvTbg1hVk)
 
-**New from the same team:** [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-top&utm_campaign=book), our book on making LLMs and agents reliable with prompting, RAG, evaluation, and harnesses. It comes out before the end of 2026; [join the waitlist](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-top&utm_campaign=book) to hear the date first.
+**New from the same team:** [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=antislop-top&utm_campaign=book), our book on making LLMs and agents reliable with prompting, RAG, evaluation, and harnesses. It comes out before the end of 2026; [join the waitlist](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=antislop-top&utm_campaign=book) to hear the date first.
 
 ---
 
@@ -492,7 +492,7 @@ Return only the revised draft.
 
 **Which model?** On the October 2026 ToneBench board, Claude Opus 5.5 at xhigh effort ranks first, at about $1 per long-form draft. GLM-5.3 Flash is the strongest open model under 5 cents a draft, about four points lower at roughly 2 cents, which makes it a good engine for step 2. The benchmark measures long-form spoken scripts in one author's voice, so treat it as a starting point. Pick the model that gets you to a publishable draft with the fewest edits on your own work.
 
-**Take the loop further.** Steps 3 to 6 are a small evaluation system: fixed criteria, a separate judge, evidence before scores. Our upcoming book, [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-inline&utm_campaign=book), shows how to build the production version for any LLM feature or agent: representative test cases and graders that tell you whether a prompt change helped, traces that explain why an output failed, and the guardrails that keep an agent inside its limits.
+**Take the loop further.** Steps 3 to 6 are a small evaluation system: fixed criteria, a separate judge, evidence before scores. Our upcoming book, [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=antislop-inline&utm_campaign=book), shows how to build the production version for any LLM feature or agent: representative test cases and graders that tell you whether a prompt change helped, traces that explain why an output failed, and the guardrails that keep an agent inside its limits.
 
 ---
 
@@ -554,7 +554,7 @@ Over-correction produces its own slop. Keep these in mind before you cut.
 
 ## Go further: AI Engineering For Production
 
-<a href="https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-end&utm_campaign=book"><img src="https://www.louisbouchard.ai/media/book/ai-engineering-for-production-front-cover-700.webp" alt="AI Engineering For Production book cover" width="180" align="right"></a>
+<a href="https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=antislop-end&utm_campaign=book"><img src="https://www.louisbouchard.ai/media/book/ai-engineering-for-production-front-cover-700.webp" alt="AI Engineering For Production book cover" width="180" align="right"></a>
 
 This guide gets good writing out of a model. Shipping an AI product takes the same care at every layer: the prompts, the context the model sees, the agent's tools and permissions, and the tests that tell you whether a change helped.
 
@@ -568,7 +568,7 @@ That's the subject of our new book, ***AI Engineering For Production**: Making L
 
 You can vibe code an app in a weekend. Keeping it working is the skill this book teaches.
 
-It comes out before the end of 2026. **[Join the waitlist →](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-end&utm_campaign=book)** to get the release date first and an invite to the live launch.
+It comes out before the end of 2026. **[Join the waitlist →](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=antislop-end&utm_campaign=book)** to get the release date first and an invite to the live launch.
 
 ---
 
