@@ -4,6 +4,8 @@ By Louis-Francois Bouchard ([LinkedIn](https://www.linkedin.com/in/whats-ai/), [
 
 Goal: Pick the right technique, architecture, model, and pipeline for your AI project, using actionable decision frameworks and proven patterns.
 
+**New from the same team:** [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=playbook-top&utm_campaign=book), our book that goes deeper on every layer of this playbook: prompting, RAG, memory, evaluation, agents, and production. It comes out before the end of 2026; [join the waitlist](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=playbook-top&utm_campaign=book) to hear the date first.
+
 ## **1\. Which AI Technique Should I Start With?**
 
 **Progression principle:** Prompting → CAG → RAG → Workflows → Agents → Multi-Agent. Advance only when evaluation shows the current level is insufficient.
@@ -137,6 +139,8 @@ ToneBench's July 29, 2026 snapshot placed Opus 5 max first overall at 90.94 acro
 | :---- | :---- | :---- |
 | Inconsistent output format | No structured output constraints | Use structured outputs with JSON Schema (strict mode). |
 | Reasoning models underperform | Over-specified prompts | Simplify: direct, high-level instructions. Remove step-by-step guidance. |
+
+**Go deeper on prompting:** prompting and context are the first layer of our upcoming book, [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=playbook-inline&utm_campaign=book). It covers how to specify behavior, boundaries, and inputs, then how to measure whether a prompt change actually helped with representative test cases and graders.
 
 ## **4\. How Should I Build My RAG Pipeline?**
 
@@ -313,6 +317,27 @@ User feedback (explicit \+ implicit) → Monitor metrics (latency, cost, quality
 | High latency | Multiple bottlenecks | (1) Streaming. (2) Prompt caching. (3) Reduce top\_k. (4) Smaller model for simple queries. (5) Semantic caching. |
 | Cache hit rate low | Prompt not cache-friendly | (1) Static content at beginning. (2) Variable content at end. (3) Exact prefix matches. |
 | Can’t reproduce issues | No observability | Implement tracing: log prompts, tools, tokens, latency per request. |
+
+## **Go Further: AI Engineering For Production**
+
+<a href="https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=playbook-end&utm_campaign=book"><img src="https://www.louisbouchard.ai/media/book/ai-engineering-for-production-front-cover-700.webp" alt="AI Engineering For Production book cover" width="180" align="right"></a>
+
+This playbook helps you pick the right technique for each layer. Making the whole system reliable in production is the harder part: prompts you can change safely, retrieval that finds the right evidence, agents with limits, and tests that catch regressions before users do.
+
+That's the subject of our new book, ***AI Engineering For Production**: Making LLMs and agents reliable with Prompting, RAG, Evaluation, and Harnesses*, from the authors of the best-selling *Building LLMs for Production*.
+
+- **Prompting and context:** specify behavior and boundaries, and give the model the inputs it actually needs.
+- **Change a prompt and know if it helped:** representative cases and graders that tell you whether last week's change actually helped.
+- **Get the right context in front of the model:** ingestion, reranking, and provenance built around what the system needs to know.
+- **Agents that stay inside their limits:** tools, state, permissions, checkpoints, and human approval where a mistake costs the most.
+- **Know why it failed:** traces and failure categories that turn a bad output into a specific fix.
+- **Harnesses and recovery:** retries, fallbacks, and the loops that improve the system over time.
+
+You can vibe code an app in a weekend. Keeping it working is the skill this book teaches.
+
+It comes out before the end of 2026. **[Join the waitlist →](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=playbook-end&utm_campaign=book)** to get the release date first and an invite to the live launch.
+
+---
 
 This decision framework (and the engineering patterns behind it) is exactly what we teach in the Towards AI courses.  
 **Learn more in our full course:** [Full Stack AI Engineering](https://academy.towardsai.net/courses/beginner-to-advanced-llm-dev?ref=1f9b29)

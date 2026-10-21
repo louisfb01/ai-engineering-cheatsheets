@@ -9,6 +9,8 @@ Goal: decide **Workflow vs Single Agent vs Multi-Agent** from real constraints, 
 *Pro Tip: Check the full workflow vs. agents Webinar for free here: [https://www.youtube.com/watch?v=iOpLKJYOvXs](https://www.youtube.com/watch?v=iOpLKJYOvXs)*   
 *(and subscribe to the channel to learn more\! 😉)*
 
+**New from the same team:** [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=agents-top&utm_campaign=book), our book on making LLMs and agents reliable, from tool design and permissions to evaluation and the harnesses around them. It comes out before the end of 2026; [join the waitlist](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=agents-top&utm_campaign=book) to hear the date first.
+
 ## **1 The Architecture Spectrum (Stay as Simple as Possible)**
 
 **Workflow \-\> Single Agent \+ Tools \-\> Multi-Agent**  
@@ -78,6 +80,8 @@ When Multi-Agent Does NOT Fit
 * Validation loops: generate \-\> validate \-\> fix with actionable feedback; hard checks first, then an evidence-first LLM review when needed.
 * Observability is mandatory: trace prompts, tools, token costs, outputs; auto-evals.  
 * Human-in-the-loop (HITL) is a design choice: put the gate at the uncertain decision with the most downstream impact and before irreversible actions.
+
+**Go deeper on agent reliability:** our upcoming book, [*AI Engineering For Production*](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=agents-inline&utm_campaign=book), covers the harness around an agent: tools, state, permissions, checkpoints, human approval where a mistake costs the most, and the retries and fallbacks that recover when a step fails.
 
 ### **A Practical Decision Process (Use This In Kickoffs)**
 
@@ -211,6 +215,26 @@ Cloud tasks can continue without a laptop. Local-vault and session-based tasks n
 Use the [context and memory decision table](AI_Engineering_Playbook.md#5-how-should-i-manage-context-and-memory): compact the same task, fork related work, start fresh for a different or polluted task, and write durable information to a file.
 
 Before a reset, save decisions, changed files, open questions, and the next action. Prune unused tools as the session grows. Put static prompt content first and changing inputs last so prompt caching can reuse the prefix.
+
+## **Go Further: AI Engineering For Production**
+
+<a href="https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=agents-end&utm_campaign=book"><img src="https://www.louisbouchard.ai/media/book/ai-engineering-for-production-front-cover-700.webp" alt="AI Engineering For Production book cover" width="180" align="right"></a>
+
+This guide helps you choose an agent architecture and run it. Keeping an agent reliable once it ships takes engineering around the model: clear limits, evidence it can trust, tests for every change, and a way to see why a run went wrong.
+
+That's the subject of our new book, ***AI Engineering For Production**: Making LLMs and agents reliable with Prompting, RAG, Evaluation, and Harnesses*, from the authors of the best-selling *Building LLMs for Production*.
+
+- **Agents that stay inside their limits:** tools, state, permissions, checkpoints, and human approval where a mistake costs the most.
+- **Harnesses and recovery:** retries, fallbacks, and the loops that improve the system over time.
+- **Prompting and context:** specify behavior and boundaries, and give the model the inputs it actually needs.
+- **Change a prompt and know if it helped:** representative cases and graders that tell you whether last week's change actually helped.
+- **Know why it failed:** traces and failure categories that turn a bad output into a specific fix.
+
+You can vibe code an app in a weekend. Keeping it working is the skill this book teaches.
+
+It comes out before the end of 2026. **[Join the waitlist →](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=agents-end&utm_campaign=book)** to get the release date first and an invite to the live launch.
+
+---
 
 This decision framework (and the engineering patterns behind it) is exactly what we teach in the Towards AI courses.
 
