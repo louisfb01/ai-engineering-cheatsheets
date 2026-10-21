@@ -26,6 +26,7 @@ For the Anti-Slop guide, assemble the sources first, fill in the prompt template
 
 These cheatsheets come from the [Towards AI](https://academy.towardsai.net/?ref=1f9b29) courses. They cover the same frameworks in more depth, with full lessons, code, and hands-on projects.
 
+- [AI Engineering For Production](https://www.louisbouchard.ai/book/?utm_source=github-lf&utm_medium=cheatsheet-readme&utm_campaign=book) - Our new book on making LLMs and agents reliable with prompting, RAG, evaluation, and harnesses. Coming before the end of 2026; join the waitlist to hear the date first.
 - [Full Stack AI Engineering](https://academy.towardsai.net/courses/beginner-to-advanced-llm-dev?ref=1f9b29) - Prompting to production-grade RAG system. Position yourself for the roles, projects, and opportunities that AI is creating right now.
 - [AI for Business Professionals](https://academy.towardsai.net/courses/ai-business-professionals?ref=1f9b29) - Learn to get real benefits from LLMs for valuable tasks from experts that build AI for a living.
 - [Agentic AI Engineering](https://academy.towardsai.net/courses/agent-engineering?ref=1f9b29) - Your Path to Agentic AI for Production.
