@@ -4,7 +4,7 @@ By [Louis-Francois Bouchard](https://www.linkedin.com/in/whats-ai/) ([X](https:/
 
 Goal: give you decision-ready references for the most common AI engineering problems. Open a cheatsheet, find your situation in the table, and follow the recommendation.
 
-Model and tool preferences are a snapshot from August 2026. Treat them as tested starting points, then validate them on your own workload.
+Model and tool preferences are snapshots: August 2026 for the playbook and agent guide, October 2026 for the Anti-Slop guide. Treat them as tested starting points, then validate them on your own workload.
 
 ## Cheatsheets
 
@@ -12,7 +12,7 @@ Model and tool preferences are a snapshot from August 2026. Treat them as tested
 | :--- | :--- |
 | [AI Engineering Playbook](AI_Engineering_Playbook.md) | Pick the right AI technique, model, effort level, modality workflow, prompting strategy, RAG setup, memory pattern, eval method, and production config. |
 | [Agent Architecture and Operations Guide](Agent_Architecture_Guide.md) | Decide between workflow, single agent, and multi-agent, then operate it with curated context, evidence stores, phased review, portable skills, feedback loops, and safe scheduling. |
-| [Anti-Slop AI Writing Guide](Anti_Slop_AI_Writing_Guide.md) | Produce grounded, human-sounding writing with a 7-section prompt, checkable anti-slop rules, the current Towards AI long-form starting point, evidence-first review, one targeted rewrite, and platform checks. |
+| [Anti-Slop AI Writing Guide](Anti_Slop_AI_Writing_Guide.md) | Write with AI without sounding like AI: the six kinds of slop, what 6,750 judged drafts reveal about AI tells, rules with before/after examples, a two-generation phrase list, a copy-paste prompt, pick/review/rewrite prompts, a 60-second check, and format checks. |
 
 ## How to use
 
@@ -20,7 +20,7 @@ Model and tool preferences are a snapshot from August 2026. Treat them as tested
 2. Find your situation in the decision tables.
 3. Follow the recommended approach.
 
-For the Anti-Slop guide, assemble the sources first, fill in the complete template, finish the draft, and then run the separate evidence-first review before your human edit.
+For the Anti-Slop guide, assemble the sources first, fill in the prompt template, generate a few drafts, pick the best, run the separate evidence-first review, rewrite once, and finish with the 60-second check.
 
 ## Learn more
 
